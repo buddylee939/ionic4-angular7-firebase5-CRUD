@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'post/new', loadChildren: './pages/posts/post-new/post-new.module#PostNewPageModule' },
   { path: 'post/edit/:id', loadChildren: './pages/posts/post-edit/post-edit.module#PostEditPageModule' },
   { path: 'post/:id', loadChildren: './pages/posts/post-detail/post-detail.module#PostDetailPageModule' },
+  { path: 'data', loadChildren: './data/data.module#DataPageModule' },
 ];
 
 @NgModule({

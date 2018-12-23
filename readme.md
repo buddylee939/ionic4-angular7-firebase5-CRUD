@@ -52,4 +52,9 @@ export class TodoService {
   }  
 }
 ```
+# Created a data loop to populate the database
 
+- go to /data page
+- the data.page.ts loads the mock data from mock-data/posts
+- then does a foreach loop, sending the posts to the createPost function
+- which calls the post service and writes the post to the database
