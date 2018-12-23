@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-button slot="start" routerLink="/posts">Posts</ion-button>
+      <ion-title>
+        Create a Post
+      </ion-title>
+      <ion-button slot="end" routerLink="/todos">Todos</ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Title" [(ngModel)]="post.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea required type="text" placeholder="Body" [(ngModel)]="post.body"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="savePost()">Save</ion-button>
+</ion-content>

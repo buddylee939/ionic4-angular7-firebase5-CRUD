@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      {{pageTitle | uppercase}}
+    </ion-title>
+    <ion-button slot="end" routerLink="/todos">Todos</ion-button>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content >
+  <ng-container *ngIf="!post$ || post$.length == 0; else posts">
+    <h2 text-center>What's on your mind...</h2>
+    <div *ngFor="let n of [0,1,2]" padding>
+      <ion-skeleton-text></ion-skeleton-text>
+      <p>
+        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+      </p>
+    </div>
+  </ng-container>
+
+  <ng-template #posts>
+    <ion-list>
+      <ion-item *ngFor="let post of post$" [routerLink]="['/post', post.id]">
+        <ion-label>
+            <h2>{{post.title}}</h2>
+          </ion-label>
+      </ion-item>
+    </ion-list>    
+  </ng-template>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/post/new">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  
+</ion-content>
+
